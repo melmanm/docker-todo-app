@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: todo-app-argo
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusterDecisionResource:
+        configMapRef: acm-placementrule
+        name: todo-argo-placement
+        requeueAfterSeconds: 30
+  template:
+    metadata:
+      name: "{{name}}-todo-app"
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/melmanm/docker-todo-app.git
+        targetRevision: master
+        path: "kubernetes/overlays/{{name}}"
+      destination:
+        server: "{{server}}"
+        namespace: todo-argo
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: false
+        syncOptions:
+          - CreateNamespace=true
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: todo-argo-placement
+  namespace: openshift-gitops
+spec:
+  clusterReplicas: 2 # Availability choice, maximum number of clusters to provision at once
+  clusterConditions:
+    - type: ManagedClusterConditionAvailable
+      status: "True"

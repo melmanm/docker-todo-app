@@ -1,0 +1,29 @@
+POST https://localhost:44340/api/TodoContoller/add HTTP/1.1
+content-Type: application/json
+
+{
+      "todo": "Michał"
+
+}
+
+###
+POST https://localhost:44340/api/TodoContoller/update HTTP/1.1
+content-Type: application/json
+
+{
+      "id": "3fedadea-8f1e-4c61-8795-745a74db50ec",
+      "isDone": true
+}
+
+
+###
+DELETE  https://localhost:44340/api/TodoContoller/remove?id=3fedadea-8f1e-4c61-8795-745a74db50ec HTTP/1.1
+content-Type: application/json
+
+
+###
+
+GET https://localhost:44340/api/TodoContoller HTTP/1.1
+content-Type: application/json
+
+{}
