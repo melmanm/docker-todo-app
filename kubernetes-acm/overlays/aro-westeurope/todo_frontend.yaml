@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todofrontend-deployment
+  labels:
+    app: todofrontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todofrontend
+  template:
+    metadata:
+      labels:
+        app: todofrontend
+    spec:
+      containers:
+        - name: todofrontend
+          image: melmanmankiewicz/todo_frontend:red1.0
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_API_URL
+              valueFrom:
+                secretKeyRef:
+                  name: todo-secret
+                  key: api-url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: todofrontend-service
+spec:
+  selector:
+    app: todofrontend
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
