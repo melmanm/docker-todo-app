@@ -1,22 +1,22 @@
-version: '3'
+version: "3"
 services:
-    todo_api:
-        image: melmanmankiewicz/todo_api:3.0
-        ports:
-            - "6001:8080"
-        environment:
-          - MONGO_URL=todo_mongodb
-          - MONGO_LOGIN=admin
-          - MONGO_PASSWORD=admin
-    todo_frontend:
-        image: melmanmankiewicz/todo_frontend:7.0
-        ports:
-            - "3000:3000"
-        environment:
-            - REACT_APP_API_URL=#apiUrl
-    todo_mongodb:
-        image: centos/mongodb-36-centos7
-        ports:
-            - "27017:27017"
-        environment:
-            - MONGODB_ADMIN_PASSWORD=admin
+  todo_api:
+    image: melmanmankiewicz/todo_api:3.0
+    ports:
+      - "6001:8080"
+    environment:
+      - MONGO_URL=todo_mongodb
+      - MONGO_LOGIN=admin
+      - MONGO_PASSWORD=admin
+  todo_frontend:
+    image: melmanmankiewicz/todo_frontend:7.0
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL= #apiUrl
+  todo_mongodb:
+    image: centos/mongodb-36-centos7
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGODB_ADMIN_PASSWORD=admin
