@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: https://github.com/melmanm/docker-todo-app.git
         targetRevision: master
-        path: "kubernetes/overlays/{{name}}"
+        path: "kubernetes-acm/overlays/{{name}}"
       destination:
         server: "{{server}}"
         namespace: todo-argo
