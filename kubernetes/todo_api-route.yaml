@@ -8,7 +8,7 @@ spec:
     kind: Service
     name: todoapi-service
   port:
-    targetPort: 8081
+    targetPort: 8081-tcp
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: None

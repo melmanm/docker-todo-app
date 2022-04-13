@@ -34,6 +34,7 @@ spec:
   selector:
     app: todofrontend
   ports:
-    - protocol: TCP
+    - name: 3000-tcp
+      protocol: TCP
       port: 3000
       targetPort: 3000

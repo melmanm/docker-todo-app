@@ -41,10 +41,10 @@ kind: Service
 metadata:
   name: todoapi-service
 spec:
-  type: NodePort
   selector:
     app: todoapi
   ports:
-    - protocol: TCP
+    - name: 8081-tcp
+      protocol: TCP
       port: 8081
       targetPort: 8080
