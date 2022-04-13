@@ -34,7 +34,7 @@ metadata:
   name: todo-argo-placement
   namespace: openshift-gitops
 spec:
-  clusterReplicas: 2 # Availability choice, maximum number of clusters to provision at once
+  clusterReplicas: 5 # Availability choice, maximum number of clusters to provision at once
   clusterConditions:
     - type: ManagedClusterConditionAvailable
       status: "True"
