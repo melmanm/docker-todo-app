@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: todofrontend
-          image: melmanmankiewicz/todo_frontend:red1.0
+          image: melmanmankiewicz/todo_frontend:7.0
           ports:
             - containerPort: 3000
           env:
