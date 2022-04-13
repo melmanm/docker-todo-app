@@ -8,4 +8,4 @@ spec:
     kind: Service
     name: todofrontend-service
   port:
-    targetPort: 3000
+    targetPort: 3000-tcp
