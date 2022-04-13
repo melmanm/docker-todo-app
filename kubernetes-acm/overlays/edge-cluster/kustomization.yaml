@@ -4,3 +4,5 @@ bases:
   - ../../base
 resources:
   - todo-secret-sealed.json
+patchesStrategicMerge:
+  - todo-frontend.yaml
