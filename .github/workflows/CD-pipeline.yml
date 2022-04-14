@@ -33,5 +33,5 @@ jobs:
         with:
           context: ./frontend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ Init.steps.date.outputs.date }}”
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ jobs[0].steps.date.outputs.date }}”
           
