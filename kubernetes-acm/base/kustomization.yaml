@@ -8,4 +8,4 @@ resources:
 images:
   - name: todo_frontend
     newName: melmanmankiewicz/todo_frontend
-    newTag: 7.0
+    newTag: "7.0"
