@@ -29,7 +29,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           repository: ${{ secrets.DOCKER_USERNAME }}/todo_frontend
-          file: frontend/Dockerfile
           context: ./frontend
           push: true
           tags: ${{ github.sha }}, latest
