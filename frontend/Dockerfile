@@ -4,6 +4,9 @@ FROM node:13.12.0-alpine
 # set working directory
 WORKDIR /app
 EXPOSE 3000
+
+ARG IMAGE_VERSION
+ENV REACT_APP_IMAGE_VERSION = $IMAGE_VERSION
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 

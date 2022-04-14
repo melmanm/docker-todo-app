@@ -8,6 +8,7 @@ import Container from "@material-ui/core/Container";
 import { Typography } from "@mui/material";
 
  const API_URL = process.env.REACT_APP_API_URL;
+ const IMAGE_VERSION = process.env.REACT_APP_IMAGE_VERSION;
  //const API_URL = "https://localhost:44340";
 
 
@@ -58,7 +59,7 @@ const App = (params) => {
     <Container maxWidth="md">
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h5">Add To Do</Typography>
+          <Typography variant="h5">ToDo App (image version {IMAGE_VERSION})</Typography>
         </Grid>
         <Grid item xs={12}>
           <TodoForm onAdd={onSubmit} />
