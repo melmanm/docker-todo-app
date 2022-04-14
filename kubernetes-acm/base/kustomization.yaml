@@ -6,6 +6,5 @@ resources:
   - bitnami-controller.yaml
   - todo-config.yaml
 images:
-  - name: todo_frontend
-    newName: melmanmankiewicz/todo_frontend
-    newTag: "20220414_115423"
+
+
