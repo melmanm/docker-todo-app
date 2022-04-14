@@ -15,16 +15,16 @@ spec:
         app: mongo
     spec:
       containers:
-      - name: mongo
-        image: centos/mongodb-36-centos7
-        ports:
-        - containerPort: 27017
-        env:
-          - name: MONGODB_ADMIN_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: todo-secret
-                key: mongo-password 
+        - name: mongo
+          image: centos/mongodb-36-centos7
+          ports:
+            - containerPort: 27017
+          env:
+            - name: MONGODB_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: todo-secret
+                  key: mongo-password
 ---
 apiVersion: v1
 kind: Service
@@ -36,4 +36,4 @@ spec:
   ports:
     - protocol: TCP
       port: 27017
-      targetPort: 27017 
+      targetPort: 27017

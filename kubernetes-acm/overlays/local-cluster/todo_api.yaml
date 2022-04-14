@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: todoapi
-          image: melmanmankiewicz/todo_api:3.0
+          image: todo_api
           ports:
             - containerPort: 8080
           env:

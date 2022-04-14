@@ -9,3 +9,7 @@ images:
   - name: todo_frontend
     newName: melmanmankiewicz/todo_frontend
     newTag: "7.0"
+images:
+  - name: todo_api
+    newName: melmanmankiewicz/todo_api
+    newTag: "3.0"
