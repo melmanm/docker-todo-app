@@ -7,3 +7,7 @@ resources:
   - todo_api-route.yaml
   - todo_api.yaml
   - todo-secret-sealed.json
+images:
+  - name: todo_api
+    newName: melmanmankiewicz/todo_api
+    newTag: "3.0"
