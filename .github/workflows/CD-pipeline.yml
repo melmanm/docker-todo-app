@@ -6,7 +6,6 @@ on:
 jobs:
   init:
     outputs:
-      date: ${{ steps.date.outputs.date }}
       datetag: ${{ steps.datetag.outputs.datetag }}
     runs-on: ubuntu-latest
     steps:
@@ -15,12 +14,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}."
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
       - name: Get current date tag
         id: datetag
-        run: echo "::set-output name=datetag::$(date +'%Y%m%d_%H%M%S')"
+        run: echo "::set-output name=datetag::$(date -u +'%Y-%m-%d_%H%-M%-S')"
   build:
     needs: init
     runs-on: ubuntu-latest
