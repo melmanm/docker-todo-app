@@ -12,13 +12,12 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}."
-
-  build:
-    runs-on: ubuntu-latest
-    steps:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
       # setup Docker buld action
       - name: Set up Docker Buildx
@@ -34,5 +33,5 @@ jobs:
         with:
           context: ./frontend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ steps.date.outputs.date }}”
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ Init.steps.date.outputs.date }}”
           
