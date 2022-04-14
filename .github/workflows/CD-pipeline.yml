@@ -30,7 +30,7 @@ jobs:
         with:
           repository: ${{ secrets.DOCKER_USERNAME }}/todo_frontend
           file: frontend/Dockerfile
-          context: frontend
+          context: ./frontend
           push: true
           tags: ${{ github.sha }}, latest
           
