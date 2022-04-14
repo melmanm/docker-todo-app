@@ -5,3 +5,7 @@ resources:
   - todo_frontend.yaml
   - bitnami-controller.yaml
   - todo-config.yaml
+images:
+  - name: todo_frontend
+    newName: melmanmankiewicz/todo_frontend
+    newTag: 7.0
