@@ -56,7 +56,7 @@ jobs:
         kustomize-version: "3.6.1"
     - name: Update Kubernetes resources
       run: |
-       cd kunernetes-acm/base
+       cd kubernetes-acm/base
        kustomize edit set image todo_frontend=${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ needs.init.outputs.datetag }}
        cat kustomization.yaml        
     - name: Commit files
