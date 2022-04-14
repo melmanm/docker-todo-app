@@ -12,10 +12,3 @@ images:
 - name: todo_frontend
   newName: melmanmankiewicz/todo_frontend
   newTag: "20220414_113515"
-images:
-- name: todo_api
-  newName: melmanmankiewicz/todo_api
-  newTag: "3.0"
-- name: todo_frontend
-  newName: melmanmankiewicz/todo_frontend
-  newTag: "20220414_113515"
