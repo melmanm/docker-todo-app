@@ -29,7 +29,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           repository: ${{ secrets.DOCKER_USERNAME }}/todo_frontend
-          path: frontend
+          context: frontend
           push: true
           tags: ${{ github.sha }}, latest
           
