@@ -38,6 +38,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
+          build-args: IMAGE_VERSION=${{ needs.init.outputs.datetag }}
           context: ./frontend
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ needs.init.outputs.datetag }}
