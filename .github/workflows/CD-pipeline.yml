@@ -31,5 +31,5 @@ jobs:
         with:
           context: ./frontend
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/todo_frontend:${{ github.sha }}, ${{ secrets.DOCKER_USERNAME }}/todo_frontend:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ github.sha }}, ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:latest
           
