@@ -16,7 +16,7 @@ jobs:
       - run: echo "This job's status is ${{ job.status }}."
       - name: Get current date tag
         id: datetag
-        run: echo "::set-output name=datetag::$(date -u +'%Y-%m-%d_%H%-M%-S')"
+        run: echo "::set-output name=datetag::$(date -u +'%Y-%m-%d_%H-%M-%S')"
   build:
     needs: init
     runs-on: ubuntu-latest
