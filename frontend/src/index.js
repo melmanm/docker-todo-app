@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './Copmonents/App'
 
 ReactDOM.render(
-  <div className="app" style="{{backgroundColor: green}}">
+  <div className="app" style={{backgroundColor: 'green'}}>
     <App>
     </App>
   </div>,
