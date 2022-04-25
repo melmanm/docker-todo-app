@@ -54,6 +54,7 @@ jobs:
     - name: Update Kubernetes resources
       run: |
        wget https://github.com/melmanm/docker-todo-app-kubernetes/blob/master/kubernetes-acm/base/kustomization.yaml
+       cat kustomization.yaml
        kustomize edit set image todo_frontend=${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ needs.init.outputs.datetag }}
        cat kustomization.yaml
     - name: Pushes test file
