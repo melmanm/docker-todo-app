@@ -64,6 +64,7 @@ jobs:
       with:
         source_file: 'kustomization.yaml'
         destination_repo: 'melmanm/docker-to-app-kubernetes'
+        destination_branch: 'master'
         destination_folder: 'kubernetes-acm/base'
         user_email: 'git@action.com'
         user_name: 'Git Action'
