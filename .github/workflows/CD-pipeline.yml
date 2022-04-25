@@ -53,17 +53,19 @@ jobs:
         kustomize-version: "3.6.1"
     - name: Update Kubernetes resources
       run: |
-       cd kubernetes-acm/base
+       wget https://github.com/melmanm/docker-todo-app-kubernetes/blob/master/kubernetes-acm/base/kustomization.yaml
        kustomize edit set image todo_frontend=${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ needs.init.outputs.datetag }}
-       cat kustomization.yaml        
-    - name: Commit files
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git pull
-        git commit -am "Auto: upgraded docker tag after build"
-    - name: Push changes
-      uses: ad-m/github-push-action@master
+       cat kustomization.yaml
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        source_file: 'kustomization.yaml'
+        destination_repo: 'melmanm/docker-to-app-kubernetes'
+        destination_folder: 'kubernetes-acm/base'
+        user_email: 'git@action.com'
+        user_name: 'Git Action'
+        commit_message: 'Automatic Commit'
+
           
