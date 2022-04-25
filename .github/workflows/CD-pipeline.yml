@@ -68,6 +68,6 @@ jobs:
         destination_folder: 'kubernetes-acm/base'
         user_email: 'git@action.com'
         user_name: 'Git Action'
-        commit_message: 'Automatic commit'
+        commit_message: 'Automatic commit ${{ needs.init.outputs.datetag }}'
 
           
