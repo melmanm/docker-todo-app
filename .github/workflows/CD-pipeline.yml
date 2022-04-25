@@ -63,7 +63,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
       with:
         source_file: 'kustomization.yaml'
-        destination_repo: 'melmanm/docker-to-app-kubernetes'
+        destination_repo: 'melmanm/docker-todo-app-kubernetes'
         destination_branch: 'master'
         destination_folder: 'kubernetes-acm/base'
         user_email: 'git@action.com'
