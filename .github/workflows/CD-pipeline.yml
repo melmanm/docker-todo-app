@@ -57,7 +57,7 @@ jobs:
         run: |
           wget https://raw.githubusercontent.com/melmanm/docker-todo-app-kubernetes/master/${{ env.KUSTOMIZATION_PATH }}/kustomization.yaml
           cat kustomization.yaml
-          kustomize edit set image todo_frontend=${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ needs.init.outputs.datetag }}
+          kustomize edit set image melmanmankiewicz/todo_frontend=${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ needs.init.outputs.datetag }}
           cat kustomization.yaml
       - name: Pushes test file
         uses: dmnemec/copy_file_to_another_repo_action@main
