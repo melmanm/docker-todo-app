@@ -59,7 +59,7 @@ const App = (params) => {
     <Container maxWidth="md">
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography variant="h5">New Version Of ToDo App (image version {IMAGE_VERSION})</Typography>
+          <Typography variant="h5">ToDo App (image version {IMAGE_VERSION})</Typography>
         </Grid>
         <Grid item xs={12}>
           <TodoForm onAdd={onSubmit} />
