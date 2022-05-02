@@ -6,6 +6,7 @@ ReactDOM.render(
   <div>
     <App>
     </App>
+    <img src="pictrue.png"/>
   </div>,
   document.getElementById('root')
 );
