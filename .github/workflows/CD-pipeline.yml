@@ -40,7 +40,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ needs.init.outputs.datetag }}
   deploy:
     env:
-      KUSTOMIZATION_PATH: kubernetes-acm/overlays/edge-cluster
+      KUSTOMIZATION_PATH: kubernetes-acm/base
     needs:
       - build
       - init
