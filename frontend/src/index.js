@@ -6,7 +6,7 @@ ReactDOM.render(
   <div>
     <App>
     </App>
-    <img src="pictrue.png"/>
+    <img src="picture.png" style={{margin: auto, padding: '10px', display: block}}/>
   </div>,
   document.getElementById('root')
 );
