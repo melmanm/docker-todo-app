@@ -34,10 +34,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          build-args: IMAGE_VERSION=${{ with_image }}
+          build-args: IMAGE_VERSION=with_image
           context: ./frontend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ with_image }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:with_image
   deploy:
     env:
       KUSTOMIZATION_PATH: kubernetes-acm/base
