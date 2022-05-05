@@ -34,10 +34,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          build-args: IMAGE_VERSION=with_image
+          build-args: IMAGE_VERSION=${{ needs.init.outputs.datetag }}
           context: ./frontend
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:with_image
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ needs.init.outputs.datetag }}
   deploy:
     env:
       KUSTOMIZATION_PATH: kubernetes-acm/base
@@ -57,7 +57,7 @@ jobs:
         run: |
           wget https://raw.githubusercontent.com/melmanm/docker-todo-app-kubernetes/master/${{ env.KUSTOMIZATION_PATH }}/kustomization.yaml
           cat kustomization.yaml
-          kustomize edit set image melmanmankiewicz/todo_frontend=${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:with_image
+          kustomize edit set image melmanmankiewicz/todo_frontend=${{ secrets.DOCKERHUB_USERNAME }}/todo_frontend:${{ needs.init.outputs.datetag }}
           cat kustomization.yaml
       - name: Pushes test file
         uses: dmnemec/copy_file_to_another_repo_action@main
